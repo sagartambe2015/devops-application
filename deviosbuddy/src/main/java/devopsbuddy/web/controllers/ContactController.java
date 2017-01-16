@@ -1,14 +1,36 @@
 package devopsbuddy.web.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import devopsbuddy.web.domain.frontend.FeeedbackPojo;
+
 
 @Controller
 public class ContactController {
 	
-	@RequestMapping("/contactUs")
-	public String contactUs() {
-		return "contact/contact";
+	private static Logger logger = LoggerFactory.getLogger(ContactController.class);
+	
+	private static final String FEEDBACK_MODEL_KEY = "feedback";
+	
+	private static final String CONTACT_US_VIEW_NAME  = "contact/contact";
+
+	@RequestMapping(value = "/contact", method = RequestMethod.GET)
+	public String contactGet(ModelMap modelMap) {
+		FeeedbackPojo feedBack = new FeeedbackPojo();
+		modelMap.addAttribute(ContactController.FEEDBACK_MODEL_KEY, feedBack);
+		return CONTACT_US_VIEW_NAME;
+	}
+	
+	@RequestMapping(value = "/contact", method = RequestMethod.POST)
+	public String contactPost(@ModelAttribute(FEEDBACK_MODEL_KEY) FeeedbackPojo feedback) {
+		logger.info("Contact Us Feedback receivbed :{}",feedback);
+		return CONTACT_US_VIEW_NAME;
 	}
 
 }
