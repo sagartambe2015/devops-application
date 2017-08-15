@@ -1,6 +1,8 @@
 package devopsbuddy.web.domain.frontend;
 
-public class FeeedbackPojo {
+import java.io.Serializable;
+
+public class FeeedbackPojo implements Serializable{
 	
 	@Override
 	public String toString() {
