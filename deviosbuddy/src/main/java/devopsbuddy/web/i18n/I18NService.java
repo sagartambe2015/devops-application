@@ -26,7 +26,7 @@ public class I18NService {
 		return getMessage(messageId, local);
 	}
 
-	private String getMessage(String messageId, Locale local) {
+	public String getMessage(String messageId, Locale local) {
 		return messageSource.getMessage(messageId, null, local);		
 	}
 
