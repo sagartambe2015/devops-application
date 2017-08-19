@@ -17,6 +17,8 @@ body {
  *  Courtesy of the Carousel Bootstrap example at:
  *  https://getbootstrap.com/2.3.2/examples/carousel.html
  *-------------------------------------------------------/
+
+
 /* MARKETING CONTENT
     -------------------------------------------------- */
 
@@ -64,12 +66,4 @@ body {
     font-weight: 300;
     line-height: 1;
     letter-spacing: -1px;
-}
-
-/*-------------------------------------------------------
- *  Signup form
- *-------------------------------------------------------/
- /** Registration page */
-.fieldError {
-    border : 2px solid red;
 }

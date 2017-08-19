@@ -14,4 +14,6 @@ public class CopyController {
 	public String contact() {
 		return "contact/contact";
 	}
+	
+	
 }
